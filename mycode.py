@@ -2,20 +2,20 @@ import pandas as pd
 import os
 
 # Create a sample DataFrame with column names
-data = {'Name': ['Alice', 'Bob', 'Charlie'],
-    'Age': [25, 30, 35],
-    'City': ['New York', 'Los Angeles', 'Chicago']
+data = {'Name': ['Alice', 'Bob', 'Charlie', 'GF1', 'GF2'],
+    'Age': [25, 30, 35, 40, 30],
+    'City': ['New York', 'Los Angeles', 'Chicago', 'City1', 'City2']
     }
 
 df = pd.DataFrame(data)
 
-# # Adding new row to df for V2
-new_row_loc = {'Name': 'GF1', 'Age': 20, 'City': 'City1'}
-df.loc[len(df.index)] = new_row_loc
+# # # Adding new row to df for V2
+new_row_loc = {'Name': 'GF3', 'Age': 20, 'City': 'City3'}
+df.loc[len(df)] = new_row_loc # type: ignore
 
-# # Adding new row to df for V3
-new_row_loc2 = {'Name': 'GF2', 'Age': 30, 'City': 'City2'}
-df.loc[len(df.index)] = new_row_loc2
+# # # Adding new row to df for V3
+# new_row_loc2 = {'Name': 'GF2', 'Age': 30, 'City': 'City2'}
+# df.loc[len(df.index)] = new_row_loc2
 
 # Ensure the "data" directory exists at the root level
 data_dir = 'data'
